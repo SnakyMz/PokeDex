@@ -99,3 +99,127 @@
 .card .buttons button:active {
   transform: scale(0.95);
 }
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: darkgray;
+  mix-blend-mode: multiply;
+}
+
+.popContainer {
+  display: fixed;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  display: flex;
+  height: 90vh;
+  flex-direction: column;
+  overflow-y: scroll;
+  background-color: antiquewhite;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 80%;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.tabHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.tabImage {
+  display: flex;
+  justify-content: center;
+}
+
+.popImg {
+  max-width: 300px;
+}
+
+.closeBtn {
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+}
+
+.tabDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabDetail h3 {
+  font-size: 3rem;
+}
+
+.popDetail {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+  padding: 5%;
+}
+
+.popDetail p {
+  font-size: 1.5rem;
+}
+
+.tabComments {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.commentForm {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.commentForm input,
+.commentForm textarea {
+  padding: 2% 3%;
+  margin: 2%;
+  width: 70%;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+#formSubmit {
+  padding: 2% 3%;
+  margin-bottom: 3%;
+  font-size: 1rem;
+  box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
+  background-color: silver;
+  cursor: pointer;
+}
+
+#formSubmit:hover {
+  color: #fff;
+  background-color: #0c4be1;
+}
+
+#formSubmit:active {
+  transform: scale(0.95);
+}

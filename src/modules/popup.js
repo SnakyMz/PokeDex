@@ -1,37 +1,52 @@
-export default function popup(name, image, height, weight, abilities, species) {
+export default function popup(name, image, height, weight, ability, type) {
+    const overlay = document.querySelector('.overlay');
+    const container = document.querySelector('.popContainer');
+    container.innerHTML = '';
     const tab = document.createElement('div');
     tab.className = 'popup';
 
     const tabHead = document.createElement('div');
     tabHead.className = 'tabHead';
+    const popClose = document.createElement('img');
+    popClose.className = 'closeBtn';
+    popClose.src = './images/cancel.png';
+    popClose.alt = `Close button`;
+    popClose.addEventListener('click', () => {
+        container.removeChild(tab);
+        overlay.style.display = 'none';
+        document.body.style.overflow = 'scroll';
+    });
+    tabHead.appendChild(popClose);
+
+    const tabImage = document.createElement('div');
+    tabImage.className = 'tabImage';
     const popImg = document.createElement('img');
     popImg.className = 'popImg';
     popImg.src = image;
     popImg.alt = name;
-    const popClose = document.createElement('img');
-    popClose.src = './images/cancel.png';
-    popClose.alt = `Close button`;
-    tabHead.appendChild(popImg);
-    tabHead.appendChild(popClose);
+    tabImage.appendChild(popImg);
 
     const tabDetail = document.createElement('div');
     tabDetail.className = 'tabDetail';
     const popHead = document.createElement('h3');
     popHead.className = 'popHead';
     popHead.innerHTML = name;
+    const popDetail = document.createElement('div');
+    popDetail.className = 'popDetail';
     const popHeight = document.createElement('p');
-    popHeight.innerHTML = height;
+    popHeight.innerHTML = 'height: ' + height;
     const popWeight = document.createElement('p');
-    popWeight.innerHTML = weight;
+    popWeight.innerHTML = 'weight: ' + weight;
     const popAbilities = document.createElement('p');
-    popAbilities.innerHTML = abilities;
+    popAbilities.innerHTML = 'ability: ' + ability;
     const popSpecies = document.createElement('p');
-    popSpecies.innerHTML = species;
+    popSpecies.innerHTML = 'type: ' + type;
     tabDetail.appendChild(popHead);
-    tabDetail.appendChild(popHeight);
-    tabDetail.appendChild(popWeight);
-    tabDetail.appendChild(popAbilities);
-    tabDetail.appendChild(popSpecies);
+    popDetail.appendChild(popHeight);
+    popDetail.appendChild(popWeight);
+    popDetail.appendChild(popAbilities);
+    popDetail.appendChild(popSpecies);
+    tabDetail.appendChild(popDetail);
 
     const tabComments = document.createElement('div');
     tabComments.className = 'tabComments';
@@ -60,15 +75,19 @@ export default function popup(name, image, height, weight, abilities, species) {
     const formSubmit = document.createElement('button');
     formSubmit.type = 'submit';
     formSubmit.id = 'formSubmit';
+    formSubmit.innerHTML = 'Submit';
     form.appendChild(formHead);
     form.appendChild(formName);
     form.appendChild(formText);
     form.appendChild(formSubmit);
 
     tab.appendChild(tabHead);
+    tab.appendChild(tabImage);
     tab.appendChild(tabDetail);
     tab.appendChild(tabComments);
     tab.appendChild(form);
 
-    document.body.appendChild(tab);
+    container.appendChild(tab);
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
