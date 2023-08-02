@@ -1,5 +1,5 @@
 import pokemonLogo from '../images/International_Pokémon_logo.svg';
-import pokemons from './pokemon-data';
+import pokemons from './pokemon-data.js';
 
 const headingLogo = document.querySelector('.heading__logo');
 const logo = document.createElement('img');

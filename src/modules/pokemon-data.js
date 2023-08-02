@@ -1,11 +1,6 @@
 import unlike from '../images/unlike.png';
 import popup from './popup.js';
-import API from './api-data.js';
-
-const api = new API();
-const pokemonURL = api.urls.pokemons;
-
-let numberOfItems = 0;
+import { likeGet } from './likes.js';
 
 const cards = document.body.querySelector('.cards');
 
@@ -14,15 +9,15 @@ const pokemons = async (url) => {
   const data = await response.json();
   data.results.forEach((result) => {
     fetch(result.url)
-      .then(response => response.json())
-      .then(pokemon => {
+      .then((response) => response.json())
+      .then((pokemon) => {
         const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
         const image = pokemon.sprites.other['official-artwork'].front_default;
-        const height = pokemon.height;
-        const weight = pokemon.weight;
+        const { height } = pokemon;
+        const { weight } = pokemon;
         const ability = pokemon.abilities[0].ability.name;
         const type = pokemon.types[0].type.name;
-        const id = pokemon.id;
+        const { id } = pokemon;
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
@@ -41,14 +36,16 @@ const pokemons = async (url) => {
         button.className = 'comment';
         button.innerHTML = 'Comments';
         button.addEventListener('click', () => {
-          popup(name, image, height, weight, ability, type)
+          popup(name, image, height, weight, ability, type, id);
         });
         buttons.appendChild(button);
         card.appendChild(buttons);
         cards.appendChild(card);
-      })
-  })
+      });
+  });
   return data.results.length;
 };
+
+likeGet();
 
 export default pokemons;
