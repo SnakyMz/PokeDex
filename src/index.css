@@ -1,34 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Edu SA Beginner', cursive;
+}
+
+body {
+  background-color: firebrick;
 }
 
 .heading {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
   align-items: center;
   gap: 1rem;
-  text-align: center;
   font-size: 25px;
   margin: 0;
   padding: 20px;
-  background-color: lightblue;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
-.active {
-  text-decoration: underline;
+.nav__list {
+  list-style: none;
+  margin-right: 1rem;
+}
+
+.nav__item {
+  text-decoration: none;
+  font-weight: 900;
+  color: whitesmoke;
 }
 
 /* Pokemon Cards */
 .cards {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
-  margin: 3rem;
+  padding: 2rem;
 }
 
 .card {
@@ -36,21 +48,21 @@
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  background-color: azure;
-  border-radius: 20px;
+  background-color: white;
+  border-radius: 1rem;
   text-align: center;
   transition: transform 0.5s;
+  box-shadow: 0.2rem 0.2rem 0 black;
+}
+
+.card .pokemon-img {
+  background: radial-gradient(rgb(156, 156, 156) 30%, white 10%);
+  background-size: 10px 10px;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .card:hover {
   transform: scale(1.05);
-}
-
-.card .pokemon-img {
-  border: 1px solid black;
-  border-radius: 20px;
-  background: radial-gradient(#115609 33%, #8d3394 33%);
-  background-size: 10px 10px;
 }
 
 .likeBtn {
@@ -81,19 +93,19 @@
 
 .card .buttons button {
   font-size: 1rem;
+  font-weight: 700;
   padding: 0.3rem 0.9rem;
   margin: 5px;
-  box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
   margin-bottom: 2vh;
-  background-color: silver;
+  border-radius: 0.4rem;
+  background-color: white;
   cursor: pointer;
+  box-shadow: 0.2rem 0.2rem 0 black;
 }
 
 .card .buttons button:hover {
   color: #fff;
-  background-color: #0c4be1;
+  background-color: firebrick;
 }
 
 .card .buttons button:active {
@@ -107,7 +119,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: darkgray;
+  background-color: dimgray;
   mix-blend-mode: multiply;
 }
 
@@ -130,6 +142,7 @@
   position: fixed;
   width: 80%;
   border-radius: 1rem 0 0 1rem;
+  box-shadow: 0.2rem 0.2rem 0 black;
 }
 
 .tabHead {
@@ -144,7 +157,7 @@
 }
 
 .popImg {
-  max-width: 300px;
+  max-width: 200px;
 }
 
 .closeBtn {
@@ -154,6 +167,20 @@
   padding: 0.5rem;
 }
 
+.closeBtn:hover {
+  animation: rotation 1s linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
 .tabDetail {
   display: flex;
   flex-direction: column;
@@ -161,7 +188,7 @@
   align-items: center;
 }
 
-.tabDetail h3 {
+.popHead {
   font-size: 3rem;
 }
 
@@ -181,9 +208,15 @@
 .tabComments {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+}
+
+.comments {
+  padding: 1rem 0.5rem 1rem 1.5rem;
+  font-size: 1rem;
 }
 
 .commentForm {
@@ -201,25 +234,68 @@
   margin: 2%;
   width: 70%;
   font-size: 1rem;
+  font-weight: 700;
   border-radius: 0.5rem;
 }
 
 #formSubmit {
   padding: 2% 3%;
+  font-weight: 700;
   margin-bottom: 3%;
   font-size: 1rem;
   box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
-  background-color: silver;
+  border-radius: 1rem;
+  background-color: whitesmoke;
   cursor: pointer;
 }
 
 #formSubmit:hover {
   color: #fff;
-  background-color: #0c4be1;
+  background-color: firebrick;
 }
 
 #formSubmit:active {
   transform: scale(0.95);
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: whitesmoke;
+}
+
+.footer a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+@media screen and (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .popHead {
+    font-size: 4rem;
+  }
+
+  .popDetail p {
+    font-size: 2rem;
+  }
+
+  .popImg {
+    max-width: 500px;
+  }
+
+  .popup h4 {
+    font-size: 2rem;
+  }
+
+  .comments,
+  .commentForm input,
+  .commentForm textarea,
+  #formSubmit {
+    font-size: 1.5rem;
+  }
 }
