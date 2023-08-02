@@ -149,9 +149,9 @@ GH Pages, publish the branch in git Hub pages
 
 👤 **Soban Syeed**
 
-- Github: [@SobanSyeed](https://github.com/SnakyMz)
-- Twitter: [@SobanSyeed]()
-- LinkedIn: [LinkedIn]()
+- GitHub: [@SnakyMz](https://github.com/SnakyMz)
+- Twitter: [@SobanSyeed](https://twitter.com/SobanSyeed)
+- LinkedIn: [Soban Syeed](https://www.linkedin.com/in/soban-syeed-82985b241/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
