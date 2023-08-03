@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: firebrick;
+  background-color: lightskyblue;
 }
 
 .heading {
@@ -48,17 +48,14 @@ body {
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  background-color: white;
   border-radius: 1rem;
   text-align: center;
   transition: transform 0.5s;
   box-shadow: 0.2rem 0.2rem 0 black;
-}
-
-.card .pokemon-img {
-  background: radial-gradient(rgb(156, 156, 156) 30%, white 10%);
-  background-size: 10px 10px;
-  border-radius: 1rem 1rem 0 0;
+  background-image: url(images/pokemon_town_bg_2.png);
+  background-color: antiquewhite;
+  background-blend-mode: color-burn;
+  background-size: cover;
 }
 
 .card:hover {
@@ -141,7 +138,10 @@ body {
   position: fixed;
   width: 80%;
   border-radius: 1rem 0 0 1rem;
-  box-shadow: 0.2rem 0.2rem 0 black;
+  box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 1);
+  background-image: url(images/anime_nature_bg_4.jpg);
+  background-blend-mode: color-burn;
+  background-repeat: no-repeat;
 }
 
 .tabHead {
