@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./src/images/" alt="logo" width="85%"  height="auto" />
+  <img src="./src/images/project_logo_pokedex.png" alt="logo" width="85%"  height="auto" />
   <br/>
   <h3><b>Javascript Group Capstone - PokeAPI</b></h3>
 </div>
