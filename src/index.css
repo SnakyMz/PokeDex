@@ -112,7 +112,7 @@
 }
 
 .popContainer {
-  display: fixed;
+  /* display: fixed; --------- TO BE REVIEWED ---------- */
   justify-content: center;
   align-items: center;
 }
