@@ -1,4 +1,4 @@
-//this simple array works as the "mock"
+// this simple array works as the "mock"
 const pokeCounter = (array) => array.length;
 
 describe('Pokemon Counter Test', () => {
