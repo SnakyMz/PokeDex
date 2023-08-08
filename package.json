@@ -15,7 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://snakymz.github.io/Module-2-capstone/dist",
+  "homepage": "https://snakymz.github.io/PokeDex/dist",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "babel-eslint": "^10.1.0",
