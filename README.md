@@ -64,7 +64,7 @@ This project is a basic website that allows users see a list of pokemons in card
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Coming Soon!
+- [Link to live website](https://snakymz.github.io/Module-2-capstone/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
